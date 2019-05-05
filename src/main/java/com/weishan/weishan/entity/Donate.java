@@ -1,5 +1,7 @@
 package com.weishan.weishan.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 
@@ -22,11 +24,21 @@ public class Donate extends Model<Donate> {
     /**
      * 捐赠
      */
+	@TableId(value="did", type= IdType.AUTO)
 	private Integer did;
 	private Integer uid;
 	private Date dtime;
 	private Integer dmoney;
 	private Integer pid;
+	private Integer dtype;
+
+	public Integer getDtype() {
+		return dtype;
+	}
+
+	public void setDtype(Integer dtype) {
+		this.dtype = dtype;
+	}
 
 	public Integer getPid() {
 		return pid;

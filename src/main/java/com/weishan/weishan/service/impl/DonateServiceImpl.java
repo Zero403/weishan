@@ -1,10 +1,14 @@
 package com.weishan.weishan.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.weishan.weishan.entity.Donate;
 import com.weishan.weishan.dao.DonateMapper;
+import com.weishan.weishan.entity.DonateVO;
 import com.weishan.weishan.service.DonateService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +20,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DonateServiceImpl extends ServiceImpl<DonateMapper, Donate> implements DonateService {
-	
+
+    @Override
+    public List<DonateVO> getByPid(int pid, IPage<DonateVO> page) {
+        return baseMapper.select(pid,page);
+    }
 }
