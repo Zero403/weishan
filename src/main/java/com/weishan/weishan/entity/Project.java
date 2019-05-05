@@ -33,7 +33,6 @@ public class Project extends Model<Project> {
 	private String pname;
 	private String pdesc;
 	private String img;
-	private Integer did;
 	private String contentnum;
     /**
      * 转发次数
@@ -41,10 +40,6 @@ public class Project extends Model<Project> {
 	private Integer tranpondtimes;
 	private Integer liketimes;
 	private Integer lotiontype;
-    /**
-     * 招募流程id
-     */
-	private Integer rid;
     /**
      * 注意事项
      */
@@ -131,14 +126,6 @@ public class Project extends Model<Project> {
 		this.img = img;
 	}
 
-	public Integer getDid() {
-		return did;
-	}
-
-	public void setDid(Integer did) {
-		this.did = did;
-	}
-
 	public String getContentnum() {
 		return contentnum;
 	}
@@ -169,14 +156,6 @@ public class Project extends Model<Project> {
 
 	public void setLotiontype(Integer lotiontype) {
 		this.lotiontype = lotiontype;
-	}
-
-	public Integer getRid() {
-		return rid;
-	}
-
-	public void setRid(Integer rid) {
-		this.rid = rid;
 	}
 
 	public String getAttention() {
