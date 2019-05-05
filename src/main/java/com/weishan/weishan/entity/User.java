@@ -31,6 +31,24 @@ public class User extends Model<User> {
 	private Integer flag;
 	private String headimg;
 	private String username;
+	private Integer attention;
+	private Integer noticer;
+
+	public Integer getAttention() {
+		return attention;
+	}
+
+	public void setAttention(Integer attention) {
+		this.attention = attention;
+	}
+
+	public Integer getNoticer() {
+		return noticer;
+	}
+
+	public void setNoticer(Integer noticer) {
+		this.noticer = noticer;
+	}
 
 	public String getUsername() {
 		return username;
