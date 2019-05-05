@@ -29,7 +29,15 @@ public class User extends Model<User> {
      * 1有效0无效
      */
 	private Integer flag;
+	private String headimg;
 
+	public String getHeadimg() {
+		return headimg;
+	}
+
+	public void setHeadimg(String headimg) {
+		this.headimg = headimg;
+	}
 
 	public Integer getId() {
 		return id;

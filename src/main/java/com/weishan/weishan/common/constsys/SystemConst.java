@@ -3,7 +3,7 @@ package com.weishan.weishan.common.constsys;
 import java.util.*;
 
 /**
- * @Author feri
+ * @Author null
  * @Date Created in 2019/4/28 17:30
  */
 public class SystemConst {
