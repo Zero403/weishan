@@ -30,6 +30,15 @@ public class User extends Model<User> {
      */
 	private Integer flag;
 	private String headimg;
+	private String username;
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
 	public String getHeadimg() {
 		return headimg;
