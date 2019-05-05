@@ -26,13 +26,21 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/weishan.weishan/project")
 @Api(value = "活动相关",tags = "活动")
 public class ProjectController{
-        @Autowired
-        private ProjectService projectService;
+    @Autowired
+    private ProjectService projectService;
 
-        @PostMapping("/list.do")
-        @ApiOperation(notes = "展示所有",value = "展示所有")
-        public ResultVO list(@RequestParam("page") @ApiParam(name = "page",value = "页码") int page, @RequestParam("limit") @ApiParam(name = "limit",value = "每页条数")int limit){
-            IPage<Project> iPage = projectService.page(new Page<>(page, limit));
-            return ResultUtil.exec(iPage.getTotal() > 0 , "",iPage);
-        }
+    @PostMapping("/list.do")
+    @ApiOperation(notes = "展示所有",value = "展示所有")
+    public ResultVO list(@RequestParam("page") @ApiParam(name = "page",value = "页码") int page, @RequestParam("limit") @ApiParam(name = "limit",value = "每页条数")int limit){
+        IPage<Project> iPage = projectService.page(new Page<>(page, limit));
+        return ResultUtil.exec(iPage.getTotal() > 0 , "",iPage);
+    }
+
+    @PostMapping("/info.do")
+    @ApiOperation(notes = "项目详情",value = "展示项目信息")
+    public ResultVO info(@RequestParam("pid") @ApiParam(name = "pid",value = "活动id") int pid) {
+        return ResultUtil.exec(projectService.getById(pid) != null,"查询",projectService.getById(pid));
+    }
+
+
 }
