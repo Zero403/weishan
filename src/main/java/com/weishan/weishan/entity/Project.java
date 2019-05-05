@@ -39,11 +39,12 @@ public class Project extends Model<Project> {
      */
 	private Integer tranpondtimes;
 	private Integer liketimes;
-	private Integer lotiontype;
+	private Integer locationtype;
     /**
      * 注意事项
      */
 	private String attention;
+
 
 
 	public Integer getPid() {
@@ -151,11 +152,11 @@ public class Project extends Model<Project> {
 	}
 
 	public Integer getLotiontype() {
-		return lotiontype;
+		return locationtype;
 	}
 
 	public void setLotiontype(Integer lotiontype) {
-		this.lotiontype = lotiontype;
+		this.locationtype = lotiontype;
 	}
 
 	public String getAttention() {
