@@ -26,7 +26,15 @@ public class Donate extends Model<Donate> {
 	private Integer uid;
 	private Date dtime;
 	private Integer dmoney;
+	private Integer pid;
 
+	public Integer getPid() {
+		return pid;
+	}
+
+	public void setPid(Integer pid) {
+		this.pid = pid;
+	}
 
 	public Integer getDid() {
 		return did;
