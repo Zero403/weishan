@@ -39,7 +39,9 @@ public class DynamicController {
 //    }
     @PostMapping("/list.do")
     @ApiOperation(notes = "动态宣传页面",value = "展示所有宣传")
-    public ResultVO list(@RequestParam("page") @ApiParam(name = "page",value = "页码") int page, @RequestParam("limit") @ApiParam(name = "limit",value = "每页条数")int limit){
+    public ResultVO list(@ApiParam(name = "page",value = "页码") Integer page, @ApiParam(name = "limit",value = "每页条数")Integer limit){
+        page = page == null?1:page;
+        limit = limit == null?20:limit;
         Page<DynamicVO> page1 = new Page<>(page, limit);
         page1.setRecords(dynamicService.listAll(page1));
         return ResultUtil.exec(page1.getTotal() > 0,"",page1);
@@ -67,6 +69,9 @@ public class DynamicController {
         dynamic.setUid(uid);
         dynamic.setTransmit(dynamic.getTransmit()+1);
 
+        dynamic.setThumb(0);
+        dynamic.setTransmit(0);
+        dynamic.setComment(0);
         dynamic.setCreatetime(new Date());
         boolean b = dynamicService.save(dynamic);
         return ResultUtil.exec(b,"","转发成功");
