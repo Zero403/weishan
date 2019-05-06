@@ -19,4 +19,7 @@ import java.util.List;
 public interface DonateMapper extends BaseMapper<Donate> {
     @Select("select d.*,v.vrealname from donate d inner join volunteer v on  d.uid=v.uid where d.pid=#{pid}")
     List<DonateVO> select(int pid, IPage<DonateVO> page);
+
+    @Select("SELECT sum(dmoney) from donate where pid=#{pid}")
+    Integer findMoney(Integer pid);
 }

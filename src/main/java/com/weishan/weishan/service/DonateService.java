@@ -17,4 +17,5 @@ import java.util.List;
  */
 public interface DonateService extends IService<Donate> {
     List<DonateVO> getByPid(int pid, IPage<DonateVO> page);
+    Integer findMoney(Integer pid);
 }

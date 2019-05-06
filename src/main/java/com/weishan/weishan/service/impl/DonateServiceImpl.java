@@ -25,4 +25,9 @@ public class DonateServiceImpl extends ServiceImpl<DonateMapper, Donate> impleme
     public List<DonateVO> getByPid(int pid, IPage<DonateVO> page) {
         return baseMapper.select(pid,page);
     }
+
+    @Override
+    public Integer findMoney(Integer pid) {
+        return baseMapper.findMoney(pid);
+    }
 }
