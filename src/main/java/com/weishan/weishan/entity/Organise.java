@@ -26,6 +26,17 @@ public class Organise extends Model<Organise> {
 	private String odesc;
 
 
+
+	public String getDticket() {
+		return dticket;
+	}
+
+	public void setDticket(String dticket) {
+		this.dticket = dticket;
+	}
+
+	private String dticket;
+
 	public Integer getOid() {
 		return oid;
 	}

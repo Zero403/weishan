@@ -34,6 +34,71 @@ public class Project extends Model<Project> {
 	private String pdesc;
 	private String img;
 	private String contentnum;
+
+	private String dtarget;
+	private String dpurpose;
+
+	public Integer getOtype() {
+		return otype;
+	}
+
+	public void setOtype(Integer otype) {
+		this.otype = otype;
+	}
+
+	private String dpeople;
+	private Integer otype;
+
+	public String getDtarget() {
+		return dtarget;
+	}
+
+	public void setDtarget(String dtarget) {
+		this.dtarget = dtarget;
+	}
+
+	public String getDpurpose() {
+		return dpurpose;
+	}
+
+	public void setDpurpose(String dpurpose) {
+		this.dpurpose = dpurpose;
+	}
+
+	public String getDpeople() {
+		return dpeople;
+	}
+
+	public void setDpeople(String dpeople) {
+		this.dpeople = dpeople;
+	}
+
+	public String getDaset() {
+		return daset;
+	}
+
+	public void setDaset(String daset) {
+		this.daset = daset;
+	}
+
+	public String getDexec() {
+		return dexec;
+	}
+
+	public void setDexec(String dexec) {
+		this.dexec = dexec;
+	}
+
+	public Integer getLocationtype() {
+		return locationtype;
+	}
+
+	public void setLocationtype(Integer locationtype) {
+		this.locationtype = locationtype;
+	}
+
+	private String daset;
+	private String dexec;
     /**
      * 转发次数
      */
