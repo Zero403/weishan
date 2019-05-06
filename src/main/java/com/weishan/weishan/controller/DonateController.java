@@ -8,6 +8,7 @@ import com.weishan.weishan.common.vo.ResultVO;
 import com.weishan.weishan.entity.Donate;
 import com.weishan.weishan.service.DonateService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,9 +37,20 @@ public class DonateController {
 //	    donate.setUid();
 //    }
     @PostMapping("/list.do")
+
     public ResultVO list(@RequestParam("pid") @ApiParam(value = "活动id",name = "pid") int pid,@RequestParam("page") @ApiParam(name = "page",value = "页码") int page, @RequestParam("limit") @ApiParam(name = "limit",value = "每页条数")int limit){
         Page<DonateVO> page1 = new Page<>(page, limit);
         page1.setRecords(donateService.getByPid(pid, page1));
         return ResultUtil.exec(page1.getTotal() > 0,"捐赠",page1);
+    }
+
+    @GetMapping("/money")
+    @ApiOperation(notes = "捐款总数",value = "查询指定项目的捐款总数")
+    public ResultVO money(@RequestParam("pid") @ApiParam(name = "pid",value = "活动id") int pid){
+        Integer money = donateService.findMoney(pid);
+        if (money == null) {
+            money = 0;
+        }
+        return ResultUtil.exec(true,"查询成功",money);
     }
 }

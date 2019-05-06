@@ -33,10 +33,101 @@ public class Project extends Model<Project> {
 	private String pname;
 	private String pdesc;
 	private String img;
-	private String contentnum;
+	private Integer contentnum;
 
 	private String dtarget;
 	private String dpurpose;
+	private String dticket;
+	private Integer dnum;
+	private String uuid;
+	private String entrytype;
+	private String mailtitle;
+	private String prequire;
+	private String realm;
+	private String pcontent;
+
+	public Integer getContentnum() {
+		return contentnum;
+	}
+
+	public void setContentnum(Integer contentnum) {
+		this.contentnum = contentnum;
+	}
+
+	public String getDticket() {
+		return dticket;
+	}
+
+	public void setDticket(String dticket) {
+		this.dticket = dticket;
+	}
+
+	public Integer getDnum() {
+		return dnum;
+	}
+
+	public void setDnum(Integer dnum) {
+		this.dnum = dnum;
+	}
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+
+	public String getEntrytype() {
+		return entrytype;
+	}
+
+	public void setEntrytype(String entrytype) {
+		this.entrytype = entrytype;
+	}
+
+	public String getMailtitle() {
+		return mailtitle;
+	}
+
+	public void setMailtitle(String mailtitle) {
+		this.mailtitle = mailtitle;
+	}
+
+	public String getPrequire() {
+		return prequire;
+	}
+
+	public void setPrequire(String prequire) {
+		this.prequire = prequire;
+	}
+
+	public String getRealm() {
+		return realm;
+	}
+
+	public void setRealm(String realm) {
+		this.realm = realm;
+	}
+
+	public String getPcontent() {
+		return pcontent;
+	}
+
+	public void setPcontent(String pcontent) {
+		this.pcontent = pcontent;
+	}
+
+	public String getPbase() {
+		return pbase;
+	}
+
+	public void setPbase(String pbase) {
+		this.pbase = pbase;
+	}
+
+	private String pbase;
+
 
 	public Integer getOtype() {
 		return otype;
@@ -190,14 +281,6 @@ public class Project extends Model<Project> {
 
 	public void setImg(String img) {
 		this.img = img;
-	}
-
-	public String getContentnum() {
-		return contentnum;
-	}
-
-	public void setContentnum(String contentnum) {
-		this.contentnum = contentnum;
 	}
 
 	public Integer getTranpondtimes() {
