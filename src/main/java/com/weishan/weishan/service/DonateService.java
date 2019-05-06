@@ -2,8 +2,8 @@ package com.weishan.weishan.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.weishan.weishan.common.vo.DonateVO;
 import com.weishan.weishan.entity.Donate;
-import com.weishan.weishan.entity.DonateVO;
 
 import java.util.List;
 
