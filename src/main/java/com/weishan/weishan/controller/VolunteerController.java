@@ -6,6 +6,7 @@ import com.weishan.weishan.entity.Volunteer;
 import com.weishan.weishan.service.VolunteerService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -28,9 +29,8 @@ public class VolunteerController {
     private VolunteerService volunteerService;
 
 	@PostMapping("/add")
-    @ApiOperation(notes = "添加到特定活动", value = "添加")
-    public ResultVO add(@RequestBody Volunteer volunteer, HttpServletRequest request) {
-        int uid = Integer.parseInt(request.getParameter("uid"));
+    @ApiOperation(notes = "添加到特定活动,需要uid支持", value = "添加")
+    public ResultVO add(@RequestBody Volunteer volunteer, @RequestParam("uid") Integer uid) {
         volunteer.setUid(uid);
         return volunteerService.save(volunteer)?ResultUtil.setOK("添加成功"):ResultUtil.setERROR("添加失败");
     }

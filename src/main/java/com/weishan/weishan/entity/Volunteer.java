@@ -22,106 +22,106 @@ public class Volunteer extends Model<Volunteer> {
 
 	@TableId(value="id", type= IdType.AUTO)
 	private Integer id;
-	private String realname;
-	private String idnum;
-	private Integer age;
-	private Integer gender;
-	private Integer feature;
-	private String business;
-	private String work;
+	private String vrealname;
+	private String vidnum;
+	private Integer vage;
+	private Integer vgender;
+	private Integer vfeature;
+	private String vbusiness;
+	private String vwork;
 	private Integer pid;
-	private String desc;
+	private String vdesc;
 	private Integer uid;
 
-	public Integer getUid() {
-		return uid;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setUid(Integer uid) {
-		this.uid = uid;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getDesc() {
-		return desc;
-	}
+    public String getVrealname() {
+        return vrealname;
+    }
 
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
+    public void setVrealname(String vrealname) {
+        this.vrealname = vrealname;
+    }
 
-	public Integer getId() {
-		return id;
-	}
+    public String getVidnum() {
+        return vidnum;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setVidnum(String vidnum) {
+        this.vidnum = vidnum;
+    }
 
-	public String getRealname() {
-		return realname;
-	}
+    public Integer getVage() {
+        return vage;
+    }
 
-	public void setRealname(String realname) {
-		this.realname = realname;
-	}
+    public void setVage(Integer vage) {
+        this.vage = vage;
+    }
 
-	public String getIdnum() {
-		return idnum;
-	}
+    public Integer getVgender() {
+        return vgender;
+    }
 
-	public void setIdnum(String idnum) {
-		this.idnum = idnum;
-	}
+    public void setVgender(Integer vgender) {
+        this.vgender = vgender;
+    }
 
-	public Integer getAge() {
-		return age;
-	}
+    public Integer getVfeature() {
+        return vfeature;
+    }
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
+    public void setVfeature(Integer vfeature) {
+        this.vfeature = vfeature;
+    }
 
-	public Integer getGender() {
-		return gender;
-	}
+    public String getVbusiness() {
+        return vbusiness;
+    }
 
-	public void setGender(Integer gender) {
-		this.gender = gender;
-	}
+    public void setVbusiness(String vbusiness) {
+        this.vbusiness = vbusiness;
+    }
 
-	public Integer getFeature() {
-		return feature;
-	}
+    public String getVwork() {
+        return vwork;
+    }
 
-	public void setFeature(Integer feature) {
-		this.feature = feature;
-	}
+    public void setVwork(String vwork) {
+        this.vwork = vwork;
+    }
 
-	public String getBusiness() {
-		return business;
-	}
+    public Integer getPid() {
+        return pid;
+    }
 
-	public void setBusiness(String business) {
-		this.business = business;
-	}
+    public void setPid(Integer pid) {
+        this.pid = pid;
+    }
 
-	public String getWork() {
-		return work;
-	}
+    public String getVdesc() {
+        return vdesc;
+    }
 
-	public void setWork(String work) {
-		this.work = work;
-	}
+    public void setVdesc(String vdesc) {
+        this.vdesc = vdesc;
+    }
 
-	public Integer getPid() {
-		return pid;
-	}
+    public Integer getUid() {
+        return uid;
+    }
 
-	public void setPid(Integer pid) {
-		this.pid = pid;
-	}
+    public void setUid(Integer uid) {
+        this.uid = uid;
+    }
 
-	@Override
+    @Override
 	protected Serializable pkVal() {
 		return this.id;
 	}

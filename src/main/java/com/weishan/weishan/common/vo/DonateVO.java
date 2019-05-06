@@ -1,12 +1,9 @@
-package com.weishan.weishan.entity;
+package com.weishan.weishan.common.vo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.weishan.weishan.entity.Donate;
 
 import java.util.Date;
-import java.io.Serializable;
 
 /**
  * <p>
@@ -26,15 +23,15 @@ public class DonateVO extends Model<Donate> {
     private Integer did;
     private Integer uid;
 
-    public String getRealname() {
-        return realname;
+    public String getVrealname() {
+        return vrealname;
     }
 
-    public void setRealname(String realname) {
-        this.realname = realname;
+    public void setVrealname(String vrealname) {
+        this.vrealname = vrealname;
     }
 
-    private String realname;
+    private String vrealname;
     private Date dtime;
     private Integer dmoney;
     private Integer pid;
