@@ -37,9 +37,16 @@ public class ProjectController{
     }
 
     @PostMapping("/info.do")
-    @ApiOperation(notes = "项目详情",value = "展示项目信息")
+    @ApiOperation(notes = "项目详情",value = "展示指定项目信息")
     public ResultVO info(@RequestParam("pid") @ApiParam(name = "pid",value = "活动id") int pid) {
-        return ResultUtil.exec(projectService.getById(pid) != null,"查询",projectService.getById(pid));
+        return ResultUtil.exec(projectService.getById(pid) != null,"展示指定项目信息",projectService.getById(pid));
+    }
+
+    @PostMapping("/type.do")
+    @ApiOperation(notes = "项目详情",value = "展示指定类型项目信息")
+    public ResultVO type(@RequestParam("type") @ApiParam(name = "type",value = "类型id") int type,@RequestParam("page") @ApiParam(name = "page",value = "页码") int page, @RequestParam("limit") @ApiParam(name = "limit",value = "每页条数")int limit) {
+        IPage<Project> iPage = projectService.page(new Page<Project>(page, limit),new QueryWrapper<Project>().eq("type",type));
+        return ResultUtil.exec(iPage.getRecords().size() > 0,"展示指定类型项目信息",iPage);
     }
 
 
